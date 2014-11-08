@@ -9,14 +9,20 @@ html
         ion-nav-view(name='menuContent', animation='slide-left-right')
       ion-side-menu(side='left')
         header.bar.bar-header.bar-stable
-          h1.title Left
+          h1.title NashvesTN
         ion-content.has-header
           ion-list
-            ion-item(nav-clear='', menu-close='', ng-click='login()')
-              | Login
-            ion-item(nav-clear='', menu-close='', href='#/app/search')
-              | Search
+            ion-item(nav-clear='', menu-close='', href='#/app/home')
+              | Home
             ion-item(nav-clear='', menu-close='', href='#/app/browse')
               | Browse
-            ion-item(nav-clear='', menu-close='', href='#/app/playlists')
-              | Playlists
+            ion-item(nav-clear='', menu-close='', href='#/app/dashboard')
+              | Dashboard
+            ion-item(nav-clear='', menu-close='', href='#/app/help')
+              | Help
+            ion-item(nav-clear='', menu-close='', ng-click='logout()')
+              | Logout
+            ion-item(nav-clear='', menu-close='', ng-click='login()')
+              | Login
+            ion-item(nav-clear='', menu-close='', href='#/app/donee/3')
+              | Donee Example

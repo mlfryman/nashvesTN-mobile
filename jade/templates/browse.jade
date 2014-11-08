@@ -1,8 +1,14 @@
 html
   body
-    ion-view(title='Browse')
+    ion-view(title='NashvesTN')
       ion-nav-buttons(side='left')
         button.button.button-icon.icon.ion-navicon(menu-toggle='left')
       ion-content.has-header
-        h1 Browse
-        button.button.button-primary(ng-click='scan()') SCAN QR CODE
+
+        label.item-input-wrapper
+          i.icon.ion-ios7-search.placeholder-icon
+          input(type='search' placeholder='Search')
+        .list
+          a.item.item-thumbnail-left(href='#/app/donee/{{donee._id}}', ng-repeat='donee in donees')
+            img(src='{{donee.photo}}')
+            h2.padding {{donee.name}}

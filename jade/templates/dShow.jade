@@ -1,0 +1,21 @@
+html
+  body
+    ion-view(title='NashvesTN')
+      ion-nav-buttons(side='left')
+        button.button.button-icon.icon.ion-navicon(menu-toggle='left')
+      ion-content.has-header
+        .row
+          .col.col-50
+            img.padding(src='../img/dude.jpeg')
+          .col.col-50
+            .info.padding
+              h1.padding Frank
+              .button.button-balanced.button-block DONATE
+        .row
+          .ion-slide-box(on-slide-changed='slideHasChanged($index)')
+            .ion-slide
+              h1 yo
+            .ion-slide
+              h1 ho
+            .ion-slide
+              h1 bucket of jo
