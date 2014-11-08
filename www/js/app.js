@@ -40,7 +40,8 @@ angular.module('gp-nashvesTN', ['ionic', 'gp-nashvesTN.controllers'])
       views: {
         'menuContent' :{
           templateUrl: 'templates/browse.html'
-        }
+        },
+      controller: 'AppCtrl'
       }
     })
     .state('app.playlists', {

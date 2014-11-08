@@ -13,6 +13,22 @@ angular.module('gp-nashvesTN.controllers', [])
     $scope.modal = modal;
   });
 
+  $scope.scan = function(){
+    console.log('scan!');
+    cordova.plugins.barcodeScanner.scan(
+      function(result){
+        alert('We got a barcode\n' +
+          'Result: ' + result.text + '\n' +
+          'Format: ' + result.format + '\n' +
+          'Cancelled: ' + result.cancelled);
+      },
+
+      function(error){
+        alert('Scanning failed: ' + error);
+      }
+    );
+  };
+
   // Triggered in the login modal to close it
   $scope.closeLogin = function(){
     $scope.modal.hide();
