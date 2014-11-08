@@ -4,4 +4,18 @@ html
       ion-nav-buttons(side='left')
         button.button.button-icon.icon.ion-navicon(menu-toggle='left')
       ion-content.has-header
-        h1 Donee Show
+        .list
+          .item.item-thumbnail-left
+            img(src='cover.jpg')
+            h2 Frank
+            .button.button-balanced DONATE
+        .ion-slide-box(on-slide-changed='slideHasChanged($index)')
+          .ion-slide
+            .box 
+              h1 Frank's Story
+          .ion-slide
+            .box 
+              h1 Skills
+          .ion-slide
+            .box 
+              h1 Updates

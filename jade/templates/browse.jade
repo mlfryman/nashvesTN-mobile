@@ -4,4 +4,18 @@ html
       ion-nav-buttons(side='left')
         button.button.button-icon.icon.ion-navicon(menu-toggle='left')
       ion-content.has-header
-        h1 Browse
+      .bar.bar-subheader
+        label.item-input-wrapper
+          i.icon.ion-ios7-search.placeholder-icon
+          input(type='search' placeholder='Search')
+        button.button.button-clear Cancel
+      .list
+        a.item.item-thumbnail-left(href='#')
+          img(src='cover.jpg')
+          h2 Frank
+        a.item.item-thumbnail-left(href='#')
+          img(src='cover.jpg')
+          h2 Vickie
+        a.item.item-thumbnail-left(href='#')
+          img(src='cover.jpg')
+          h2 Jim
