@@ -26,11 +26,12 @@ angular.module('gp-nashvesTN', ['ionic', 'gp-nashvesTN.controllers'])
       controller: 'AppCtrl'
     })
 
-    .state('app.search', {
-      url: '/search',
+    .state('app.home', {
+      url: '/home',
       views: {
-        'menuContent' :{
-          templateUrl: 'templates/search.html'
+        'menuContent': {
+          templateUrl: 'templates/home.html',
+          controller: 'HomeCtrl'
         }
       }
     })
@@ -38,31 +39,53 @@ angular.module('gp-nashvesTN', ['ionic', 'gp-nashvesTN.controllers'])
     .state('app.browse', {
       url: '/browse',
       views: {
-        'menuContent' :{
-          templateUrl: 'templates/browse.html'
-        },
-      controller: 'AppCtrl'
-      }
-    })
-    .state('app.playlists', {
-      url: '/playlists',
-      views: {
-        'menuContent' :{
-          templateUrl: 'templates/playlists.html',
-          controller: 'PlaylistsCtrl'
+        'menuContent': {
+          templateUrl: 'templates/browse.html',
+          controller: 'BrowseCtrl'
         }
       }
     })
 
-    .state('app.single', {
-      url: '/playlists/:playlistId',
+    .state('app.dashboard', {
+      url: '/dashboard',
       views: {
-        'menuContent' :{
-          templateUrl: 'templates/playlist.html',
-          controller: 'PlaylistCtrl'
+        'menuContent': {
+          templateUrl: 'templates/dashboard.html',
+          controller: 'DashboardCtrl'
+        }
+      }
+    })
+
+    .state('app.help', {
+      url: '/help',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/help.html',
+          controller: 'HelpCtrl'
+        }
+      }
+    })
+
+    .state('app.profile', {
+      url: '/profile',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/profile.html',
+          controller: 'ProfileCtrl'
+        }
+      }
+    })
+
+    .state('app.dShow', {
+      url: '/donee/:doneeId',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/dShow.html',
+          controller: 'DoneeCtrl'
         }
       }
     });
+
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/home');
 });
