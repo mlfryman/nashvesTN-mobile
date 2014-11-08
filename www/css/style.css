@@ -16,3 +16,10 @@ img {
   width: 150px;
   height: 150px;
 }
+.slide-box {
+  width: 100%;
+}
+.slide {
+  height: 200px;
+  width: 100%;
+}
