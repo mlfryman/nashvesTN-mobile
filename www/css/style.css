@@ -1,4 +1,12 @@
 /* Empty. Add your own CSS if you like */
 .header {
   background-color: darkgrey;
+  text-align: center;
+
+}
+.header > h3, h4 {
+  color: #f8f8f8;
+}
+.about {
+
 }
