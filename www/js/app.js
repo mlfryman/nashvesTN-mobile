@@ -26,43 +26,42 @@ angular.module('gp-nashvesTN', ['ionic', 'gp-nashvesTN.controllers'])
       controller: 'AppCtrl'
     })
 
-    .state('app.search', {
-      url: '/search',
-      views: {
-        'menuContent' :{
-          templateUrl: 'templates/search.html'
-        }
-      }
+    .state('app.home', {
+      url: '/',
+      templateUrl: 'templates/home.html',
+      controller: 'HomeCtrl'
     })
 
     .state('app.browse', {
       url: '/browse',
-      views: {
-        'menuContent' :{
-          templateUrl: 'templates/browse.html'
-        },
-      controller: 'AppCtrl'
-      }
-    })
-    .state('app.playlists', {
-      url: '/playlists',
-      views: {
-        'menuContent' :{
-          templateUrl: 'templates/playlists.html',
-          controller: 'PlaylistsCtrl'
-        }
-      }
+      templateUrl: 'templates/browse.html',
+      controller: 'BrowseCtrl'
     })
 
-    .state('app.single', {
-      url: '/playlists/:playlistId',
-      views: {
-        'menuContent' :{
-          templateUrl: 'templates/playlist.html',
-          controller: 'PlaylistCtrl'
-        }
-      }
+    .state('app.dashboard', {
+      url: '/dashboard',
+      templateUrl: 'templates/search.html',
+      controller: 'AppCtrl'
+    })
+
+    .state('app.help', {
+      url: '/help',
+      templateUrl: 'templates/help.html',
+      controller: 'HelpCtrl'
+    })
+
+    .state('app.profile', {
+      url: '/profile',
+      templateUrl: 'templates/profile.html',
+      controller: 'ProfileCtrl'
+    })
+
+    .state('app.dShow', {
+      url: '/donee/:doneeId',
+      templateUrl: 'templates/search.html',
+      controller: 'AppCtrl'
     });
+
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/playlists');
 });
