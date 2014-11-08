@@ -9,12 +9,6 @@ html
           i.icon.ion-ios7-search.placeholder-icon
           input(type='search' placeholder='Search')
         .list
-          a.item.item-thumbnail-left(href='#/app/donee/3')
-            img(src='../img/ionic.png')
-            h2.padding Frank
-          a.item.item-thumbnail-left(href='#/app/donee/3')
-            img(src='../img/ionic.png')
-            h2.padding Vickie
-          a.item.item-thumbnail-left(href='#/app/donee/3')
-            img(src='../img/ionic.png')
-            h2.padding Jim
+          a.item.item-thumbnail-left(href='#/app/donee/{{donee._id}}', ng-repeat='donee in donees')
+            img(src='{{donee.photo}}')
+            h2.padding {{donee.name}}

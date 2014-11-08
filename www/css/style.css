@@ -7,6 +7,12 @@
 .header > h3, h4 {
   color: #f8f8f8;
 }
-.about {
-
+.info {
+  text-align: center;
+}
+img {
+  max-width: 150px;
+  max-height: 150px;
+  width: 150px;
+  height: 150px;
 }

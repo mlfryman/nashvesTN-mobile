@@ -9,10 +9,8 @@
         <label class="item-input-wrapper"><i class="icon ion-ios7-search placeholder-icon"></i>
           <input type="search" placeholder="Search">
         </label>
-        <div class="list"><a href="#/app/donee/3" class="item item-thumbnail-left"><img src="../img/ionic.png">
-            <h2 class="padding">Frank</h2></a><a href="#/app/donee/3" class="item item-thumbnail-left"><img src="../img/ionic.png">
-            <h2 class="padding">Vickie</h2></a><a href="#/app/donee/3" class="item item-thumbnail-left"><img src="../img/ionic.png">
-            <h2 class="padding">Jim</h2></a></div>
+        <div class="list"><a href="#/app/donee/{{donee._id}}" ng-repeat="donee in donees" class="item item-thumbnail-left"><img src="{{donee.photo}}">
+            <h2 class="padding">{{donee.name}}</h2></a></div>
       </ion-content>
     </ion-view>
   </body>

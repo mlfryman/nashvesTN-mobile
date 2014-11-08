@@ -55,8 +55,15 @@ angular.module('gp-nashvesTN.controllers', [])
   'use strict';
 })
 
-.controller('BrowseCtrl', function($scope){
+.controller('BrowseCtrl', function($scope, $http){
   'use strict';
+
+    $http.get('http://172.31.253.92:9000/api/donees').then(function(response){
+      $scope.donees= response.data;
+      console.log(response.data);
+  });
+
+
 })
 
 .controller('DashboardCtrl', function($scope){
@@ -71,6 +78,9 @@ angular.module('gp-nashvesTN.controllers', [])
   'use strict';
 })
 
-.controller('DoneeCtrl', function($scope, $stateParams){
+.controller('DoneeCtrl', function($scope, $ionicSlideBoxDelegate){
   'use strict';
+  $scope.nextSlide = function(){
+    $ionicSlideBoxDelegate.next();
+  };
 });
