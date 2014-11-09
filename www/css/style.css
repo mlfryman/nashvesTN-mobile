@@ -23,11 +23,13 @@
   padding: 0;
 }
 .logo {
-  max-width: 180px;
-  width: 100%;
+  width: 90%;
   display: block;
   margin: 0 auto;
-  height: 100px;
+  height: 80px;
+  background-image: url('../img/nashvesTNLogoMobile.png');
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 .info {
   text-align: center;
@@ -85,4 +87,15 @@ img {
 }
 .steps {
   height: 320px;
+}
+.dude {
+  background-image: url('../img/dude.jpeg');
+  height: 100px;
+  width: 100px;
+  background-size: contain;
+}
+.fake-qr {
+  background-image: url('../img/qrcode.png');
+  width: 150px;
+  height: 150px;
 }
