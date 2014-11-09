@@ -3,14 +3,14 @@
   background-image: url('../img/skyline.png');
   text-align: center;
   background-color: #4393b9;
-  height: 130px;
-  opacity: .6;
+  height: 160px;
+  opacity: .8;
 }
 .slogan > h2, h3 {
   color: #f8f8f8;
 }
 .slogan {
-  margin-top: 50px;
+  margin-top: 80px;
 }
 .light {
   font-weight: lighter;

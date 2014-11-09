@@ -15,15 +15,18 @@
         <ion-content class="has-header">
           <ion-list>
             <ion-item class="no-padding"><img src="../img/nashvesTNLogoMobile.png" class="logo no-padding"></ion-item>
-            <ion-item nav-clear="" menu-close="" href="#/app/home">Home</ion-item>
-            <ion-item nav-clear="" menu-close="" href="#/app/browse">Browse</ion-item>
-            <ion-item nav-clear="" menu-close="" href="#/app/dashboard">Dashboard</ion-item>
-            <ion-item nav-clear="" menu-close="" href="#/app/help">Help</ion-item>
-            <ion-item nav-clear="" menu-close="" ng-click="logout()">Logout</ion-item>
-            <ion-item nav-clear="" menu-close="" ng-click="login()">Login</ion-item>
-            <ion-item nav-clear="" menu-close="" href="#/app/donee/3">Donee Example</ion-item>
+            <ion-item nav-clear="" menu-close="" href="#/app/home" class="item-icon-right">Home<i class="icon ion-home"></i></ion-item>
+            <ion-item nav-clear="" menu-close="" href="#/app/browse" class="item-icon-right">Find Someone to Help<i class="icon ion-arrow-graph-up-right"></i></ion-item>
+            <ion-item nav-clear="" menu-close="" href="#/app/dashboard" class="item-icon-right">Dashboard<i class="icon ion-speedometer"></i></ion-item>
+            <ion-item nav-clear="" menu-close="" href="#/app/help" class="item-icon-right">Tutorial<i class="icon ion-information"></i></ion-item>
           </ion-list>
         </ion-content>
+        <div class="row">
+          <div class="bar bar-footer">
+            <div nav-clear="" menu-close="" ng-click="login()" class="button button-icon icon ion-log-in"></div>
+            <div nav-clear="" menu-close="" ng-click="logout()" class="button button-icon icon ion-log-out"></div>
+          </div>
+        </div>
       </ion-side-menu>
     </ion-side-menus>
   </body>
