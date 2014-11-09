@@ -55,19 +55,23 @@ angular.module('gp-nashvesTN.controllers', [])
   'use strict';
 })
 
-.controller('BrowseCtrl', function($scope, $http){
+.controller('BrowseCtrl', function($scope, $http, apiBaseUrl, $state){
   'use strict';
-
-    $http.get('http://172.31.253.92:9000/api/donees').then(function(response){
+    $http.get(apiBaseUrl + 'donees').then(function(response){
       $scope.donees= response.data;
       console.log(response.data);
-  });
+    });
+    $scope.details = function(id){
+        $state.go('^app.dShow', {id: id});
 
-
+    };
 })
 
-.controller('DashboardCtrl', function($scope){
+.controller('DashboardCtrl', function($scope, $http, apiBaseUrl){
   'use strict';
+  $http.get(apiBaseUrl + 'patrons/:id').then(function(response){
+
+  });
 })
 
 .controller('HelpCtrl', function($scope, $ionicSlideBoxDelegate){
@@ -81,9 +85,15 @@ angular.module('gp-nashvesTN.controllers', [])
   'use strict';
 })
 
-.controller('DoneeCtrl', function($scope, $ionicSlideBoxDelegate){
+.controller('DoneeCtrl', function($scope, $ionicSlideBoxDelegate, $http, apiBaseUrl, $state){
   'use strict';
   $scope.nextSlide = function(){
     $ionicSlideBoxDelegate.next();
   };
+
+
+  // $http.get(apiBaseUrl + 'donees/' + id).then(function(response){
+  //   $scope.donee= response.data;
+  //   console.log(response.data);
+  // });
 });

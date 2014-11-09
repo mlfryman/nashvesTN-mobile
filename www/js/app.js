@@ -88,4 +88,5 @@ angular.module('gp-nashvesTN', ['ionic', 'gp-nashvesTN.controllers'])
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/home');
-});
+})
+.value('apiBaseUrl', 'http://192.168.1.2:9000/api/');
