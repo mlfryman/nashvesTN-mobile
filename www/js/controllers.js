@@ -2,7 +2,7 @@
 
 angular.module('gp-nashvesTN.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, OauthLoginService){
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, OauthLoginService, $state){
   'use strict';
 
   // Form data for the login modal
@@ -18,10 +18,7 @@ angular.module('gp-nashvesTN.controllers', [])
   $scope.scan = function(){
     cordova.plugins.barcodeScanner.scan(
       function(result){
-        alert('We got a barcode\n' +
-          'Result: ' + result.text + '\n' +
-          'Format: ' + result.format + '\n' +
-          'Cancelled: ' + result.cancelled);
+        $state.go('app.dShow', {doneeId:result.text});
       },
 
       function(error){
@@ -75,7 +72,6 @@ angular.module('gp-nashvesTN.controllers', [])
   'use strict';
     $http.get(apiBaseUrl + 'donees/').then(function(response){
       $scope.donees= response.data;
-      console.log(response.data);
     });
     $scope.details = function(id){
       $state.go('app.dShow', {doneeId:id});

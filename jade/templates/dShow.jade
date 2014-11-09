@@ -7,7 +7,7 @@ html
       ion-content.has-header
         .row
           .col.col-50
-            img.padding(src='../img/dude.jpeg')
+            img.padding(src='{{donee.photo}}')
           .col.col-50
             .info.padding
               h4.donee-name.padding {{donee.name}}
@@ -20,7 +20,7 @@ html
           ion-slide-box.slide-box(on-slide-changed='slideHasChanged($index)')
             ion-slide
               .slide.padding
-                h4.donee-name.item.item-divider {{donee.alias}}'s Story
+                h4.donee-name.item.item-divider {{donee.name}}'s Story
                 p.padding-top {{donee.story}}
             ion-slide
               .slide
