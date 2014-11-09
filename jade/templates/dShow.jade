@@ -5,41 +5,23 @@ html
       ion-nav-buttons(side='left')
         button.button.button-icon.icon.ion-navicon(menu-toggle='left')
       ion-content.has-header
-        .list
-          .item.item-thumbnail-left
-            img(src='cover.jpg')
-            h2 Frank
-            .button.button-balanced(ng-click='donate()') DONATE
-            //.button.button-balanced(ng-click='openDonate()') DONATE DROID
-        .ion-slide-box(on-slide-changed='slideHasChanged($index)')
-          .ion-slide
-            .box
-              h1 Donate
-              form#payment-form(action='', method='POST')
-                span.payment-errors.li
-                  label.item.item-input
-                    span.input-label Amount $
-                    input(type='text', size='1', data-stripe='amount')
-                  label.item.item-input
-                    span.input-label Card Number
-                    input(type='text', size='20', data-stripe='number')
-                  label.item.item-input
-                    span.input-label CVC
-                    input(type='text', size='4', data-stripe='cvc')
-                  label.item.item-input
-                    span.input-label Expiration (MM)
-                    input(type='text', size='2', data-stripe='exp-month')
-                  label.item.item-input
-                    span.input-label Expiration (YYYY)
-                    input(type='text', size='4', data-stripe='exp-year')
-                  label.item
-                    button.button.button-block.button-positive(type='submit') Submit Payment
-          .ion-slide
-            .box
-              h1 Frank's Story
-          .ion-slide
-            .box
-              h1 Skills
-          .ion-slide
-            .box
-              h1 Updates
+        .row
+          .col.col-50
+            img.padding(src='../img/dude.jpeg')
+          .col.col-50
+            .info.padding
+              h1.padding Frank
+              .button.button-balanced.button-block(ng-click='donate()') DONATE
+              ion-item(nav-clear='', menu-close='', href='#/app/donate/3')
+                | Donate
+        .row
+          ion-slide-box.slide-box(on-slide-changed='slideHasChanged($index)')
+            ion-slide
+              .slide
+                h1 yo
+            ion-slide
+              .slide
+                h1 ho
+            ion-slide
+              .slide
+                h1 bucket

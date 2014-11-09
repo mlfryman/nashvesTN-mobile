@@ -56,27 +56,35 @@ angular.module('gp-nashvesTN.controllers', [])
   'use strict';
 })
 
-.controller('BrowseCtrl', function($scope){
+.controller('BrowseCtrl', function($scope, $http){
   'use strict';
+
+    $http.get('http://172.31.253.92:9000/api/donees').then(function(response){
+      $scope.donees= response.data;
+      console.log(response.data);
+  });
+
+
 })
 
 .controller('DashboardCtrl', function($scope){
   'use strict';
 })
 
-.controller('HelpCtrl', function($scope){
+.controller('HelpCtrl', function($scope, $ionicSlideBoxDelegate){
   'use strict';
+  $scope.nextSlide = function(){
+    $ionicSlideBoxDelegate.next();
+  };
 })
 
 .controller('ProfileCtrl', function($scope){
   'use strict';
 })
 
-.controller('DoneeCtrl', function($scope, $stateParams, $ionicModal){
+.controller('DoneeCtrl', function($scope, $stateParams, $ionicModal, $ionicSlideBoxDelegate){
   'use strict';
 
-  // used only for custom stripe forms //
-  Stripe.setPublishableKey('pk_test_UKMfyVX6ix2ImBTaTpDqASgl');
 
   var stripeConfig = {
         key: 'pk_test_UKMfyVX6ix2ImBTaTpDqASgl',
@@ -91,32 +99,10 @@ angular.module('gp-nashvesTN.controllers', [])
       handler = StripeCheckout.configure(stripeConfig);
       //ref = window.open('', '_system', 'location=yes');
 
-  $scope.doDonate = function(){
-    console.log('donate');
-    jQuery(function($){
-      $('#payment-form').submit(function(event){
-        var $form = $(this);
-
-        console.log($form);
-
-        // Disable the submit button to prevent repeated clicks
-        $form.find('button').prop('disabled', true);
-
-        Stripe.card.createToken($form, function(res, token){
-           console.log(res);
-           console.log(token);
-           $scope.closeDonate();
-        });
-
-        // Prevent the form from submitting with the default action
-        return false;
-      });
-    });
-  };
-
+  /*************************
   $ionicModal.fromTemplateUrl('templates/donate.html', {
-    scope: $scope
-  }).then(function(modal){
+      scope: $scope
+    }).then(function(modal){
     $scope.modal = modal;
   });
 
@@ -127,6 +113,7 @@ angular.module('gp-nashvesTN.controllers', [])
   $scope.closeDonate = function(){
     $scope.modal.hide();
   };
+  **************************/
 
   $scope.donate = function(){
     if(window.device && window.device.platform.toLowerCase() === 'android'){
@@ -142,4 +129,35 @@ angular.module('gp-nashvesTN.controllers', [])
     // Use the token to create the charge with a server-side script.
     // You can access the token ID with `token.id`
   }
+
+  $scope.nextSlide = function(){
+    $ionicSlideBoxDelegate.next();
+  };
+})
+
+.controller('DonateCtrl', function($scope){
+  'use strict';
+
+  // used only for custom stripe forms //
+  Stripe.setPublishableKey('pk_test_UKMfyVX6ix2ImBTaTpDqASgl');
+
+  jQuery(function($){
+    $('#payment-form').submit(function(event){
+      var $form = $(this);
+
+      console.log($form);
+
+      // Disable the submit button to prevent repeated clicks
+      $form.find('button').prop('disabled', true);
+
+      Stripe.card.createToken($form, function(res, token){
+         console.log(res);
+         console.log(token);
+         $scope.closeDonate();
+      });
+
+      // Prevent the form from submitting with the default action
+      return false;
+    });
+  });
 });

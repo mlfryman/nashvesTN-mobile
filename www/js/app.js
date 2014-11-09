@@ -76,6 +76,16 @@ angular.module('gp-nashvesTN', ['ionic', 'gp-nashvesTN.controllers'])
       }
     })
 
+    .state('app.donate', {
+      url: '/donate/:doneeId',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/donate.html',
+          controller: 'DonateCtrl'
+        }
+      }
+    })
+
     .state('app.dShow', {
       url: '/donee/:doneeId',
       views: {
