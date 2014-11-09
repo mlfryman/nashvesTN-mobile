@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div class="modal">
+      <ion-header-bar>
+        <h1 class="title">Invest</h1>
+        <div class="buttons">
+          <button ng-click="closeDonate()" class="button button-clear">Close</button>
+        </div>
+      </ion-header-bar>
+      <ion-content>
+        <form id="payment-form" action="" method="POST"><span class="payment-errors li">
+            <label class="item item-input"><span class="input-label">Amount $</span>
+              <input type="text" size="1" data-stripe="amount">
+            </label>
+            <label class="item item-input"><span class="input-label">Card Number</span>
+              <input type="text" size="20" data-stripe="number">
+            </label>
+            <label class="item item-input"><span class="input-label">CVC</span>
+              <input type="text" size="4" data-stripe="cvc">
+            </label>
+            <label class="item item-input"><span class="input-label">Expiration (MM)</span>
+              <input type="text" size="2" data-stripe="exp-month">
+            </label>
+            <label class="item item-input"><span class="input-label">Expiration (YYYY)</span>
+              <input type="text" size="4" data-stripe="exp-year">
+            </label>
+            <label class="item">
+              <button type="" ng-click="doDonate()" class="button button-block button-positive">Submit Payment</button>
+            </label></span></form>
+      </ion-content>
+    </div>
+  </body>
+</html>

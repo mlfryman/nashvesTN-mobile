@@ -9,22 +9,47 @@
         <div class="list">
           <div class="item item-thumbnail-left"><img src="cover.jpg">
             <h2>Frank</h2>
-            <div class="button button-balanced">DONATE</div>
+            <div ng-click="donate()" class="button button-balanced">DONATE</div>
+            <!--.button.button-balanced(ng-click='openDonate()') DONATE DROID-->
           </div>
         </div>
         <div on-slide-changed="slideHasChanged($index)" class="ion-slide-box">
           <div class="ion-slide">
-            <div class="box"> 
+            <div class="box">
+              <h1>Donate</h1>
+              <form id="payment-form" action="" method="POST"><span class="payment-errors li">
+                  <label class="item item-input"><span class="input-label">Amount $</span>
+                    <input type="text" size="1" data-stripe="amount">
+                  </label>
+                  <label class="item item-input"><span class="input-label">Card Number</span>
+                    <input type="text" size="20" data-stripe="number">
+                  </label>
+                  <label class="item item-input"><span class="input-label">CVC</span>
+                    <input type="text" size="4" data-stripe="cvc">
+                  </label>
+                  <label class="item item-input"><span class="input-label">Expiration (MM)</span>
+                    <input type="text" size="2" data-stripe="exp-month">
+                  </label>
+                  <label class="item item-input"><span class="input-label">Expiration (YYYY)</span>
+                    <input type="text" size="4" data-stripe="exp-year">
+                  </label>
+                  <label class="item">
+                    <button type="submit" class="button button-block button-positive">Submit Payment</button>
+                  </label></span></form>
+            </div>
+          </div>
+          <div class="ion-slide">
+            <div class="box">
               <h1>Frank's Story</h1>
             </div>
           </div>
           <div class="ion-slide">
-            <div class="box"> 
+            <div class="box">
               <h1>Skills</h1>
             </div>
           </div>
           <div class="ion-slide">
-            <div class="box"> 
+            <div class="box">
               <h1>Updates</h1>
             </div>
           </div>

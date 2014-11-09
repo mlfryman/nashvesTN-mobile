@@ -1,0 +1,27 @@
+html
+  body
+    .modal
+      ion-header-bar
+        h1.title Invest
+        .buttons
+          button.button.button-clear(ng-click='closeDonate()') Close
+      ion-content
+        form#payment-form(action='', method='POST')
+          span.payment-errors.li
+            label.item.item-input
+              span.input-label Amount $
+              input(type='text', size='1', data-stripe='amount')
+            label.item.item-input
+              span.input-label Card Number
+              input(type='text', size='20', data-stripe='number')
+            label.item.item-input
+              span.input-label CVC
+              input(type='text', size='4', data-stripe='cvc')
+            label.item.item-input
+              span.input-label Expiration (MM)
+              input(type='text', size='2', data-stripe='exp-month')
+            label.item.item-input
+              span.input-label Expiration (YYYY)
+              input(type='text', size='4', data-stripe='exp-year')
+            label.item
+              button.button.button-block.button-positive(type='', ng-click='doDonate()') Submit Payment
