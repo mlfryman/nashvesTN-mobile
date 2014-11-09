@@ -85,9 +85,9 @@ angular.module('gp-nashvesTN.controllers', [])
 
 .controller('DashboardCtrl', function($scope, $http, apiBaseUrl){
   'use strict';
-  $http.get(apiBaseUrl + 'patrons/:id').then(function(response){
+  /*$http.get(apiBaseUrl + 'patrons/:id').then(function(response){
 
-  });
+  });*/
 })
 
 .controller('HelpCtrl', function($scope, $ionicSlideBoxDelegate){
@@ -145,7 +145,6 @@ angular.module('gp-nashvesTN.controllers', [])
 
   $http.get(apiBaseUrl + 'donees/' + $stateParams.doneeId).then(function(response){
     $scope.donee = response.data;
-    console.log($scope.donee);
   });
 })
 

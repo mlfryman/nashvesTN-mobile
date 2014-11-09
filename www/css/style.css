@@ -1,11 +1,29 @@
 /* Empty. Add your own CSS if you like */
 .header {
-  background-color: darkgrey;
+  background-image: url('../img/skyline.png');
   text-align: center;
-
+  background-color: #4393b9;
+  height: 160px;
+  opacity: .8;
 }
-.header > h3, h4 {
+.slogan > h2, h3 {
   color: #f8f8f8;
+}
+.slogan {
+  margin-top: 80px;
+}
+.light {
+  font-weight: lighter;
+}
+.no-padding {
+  padding: 0;
+}
+.logo {
+  max-width: 180px;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  height: 100px;
 }
 .info {
   text-align: center;
@@ -20,13 +38,30 @@ img {
   width: 100%;
 }
 .slide {
-  height: 200px;
+  min-height: 250px;
+  height: 100%;
   width: 100%;
 }
 .graph {
-  height: 150px;
+  height: 80px;
+  background-image: url('../img/graph.png');
+  width: 420px;
+  background-repeat: no-repeat;
+  margin: 20px auto;
 }
 .help {
   height: 500px;
   width: 100%;
+}
+.donee-name {
+  color: #4393b9;
+  font-weight: lighter;
+  text-align: center;
+}
+.skills {
+  display: inline-block;
+  width: 100%;
+}
+.about {
+  color: #4393b9;
 }
