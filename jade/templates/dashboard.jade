@@ -9,10 +9,8 @@ html
         .row
           .list.col
             .item.item-divider Donation History
-            a.item
-              h3 
-                p.amount.item-note 
-            a.item
-              h3 
-                p.amount.item-note 
+            a.item(ng-repeat='d in donations')
+              h4 {{d.date | date: 'dd MMM, y'}}
+              h4 {{d.name}}
+                p.amount.item-note ${{d.amount}}.00
             .button.button-block.button-outline.button-positive Save as PDF

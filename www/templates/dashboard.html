@@ -11,13 +11,11 @@
         </div>
         <div class="row">
           <div class="list col">
-            <div class="item item-divider">Donation History</div><a class="item">
-              <h3> 
-                <p class="amount item-note"> </p>
-              </h3></a><a class="item">
-              <h3> 
-                <p class="amount item-note"> </p>
-              </h3></a>
+            <div class="item item-divider">Donation History</div><a ng-repeat="d in donations" class="item">
+              <h4>{{d.date | date: 'dd MMM, y'}}</h4>
+              <h4>{{d.name}}
+                <p class="amount item-note">${{d.amount}}.00</p>
+              </h4></a>
             <div class="button button-block button-outline button-positive">Save as PDF</div>
           </div>
         </div>
