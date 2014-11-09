@@ -90,10 +90,13 @@ angular.module('gp-nashvesTN.controllers', [])
   });*/
 })
 
-.controller('HelpCtrl', function($scope, $ionicSlideBoxDelegate){
+.controller('HelpCtrl', function($scope, $ionicSlideBoxDelegate, $state){
   'use strict';
   $scope.nextSlide = function(){
     $ionicSlideBoxDelegate.next();
+  };
+  $scope.goBrowse = function(){
+    $state.go('app.browse');
   };
 })
 
