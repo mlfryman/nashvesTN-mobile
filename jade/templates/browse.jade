@@ -9,6 +9,6 @@ html
           i.icon.ion-ios7-search.placeholder-icon
           input(type='search' placeholder='Search')
         .list
-          .item.item-thumbnail-left(ng-repeat='donee in donees', ng-click='details(donee._id')
+          .item.item-thumbnail-left(ng-repeat='donee in donees', ng-click='details(donee._id)')
             img(src='{{donee.photo}}')
             h2.padding {{donee.name}}

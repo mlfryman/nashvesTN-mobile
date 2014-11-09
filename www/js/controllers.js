@@ -57,12 +57,12 @@ angular.module('gp-nashvesTN.controllers', [])
 
 .controller('BrowseCtrl', function($scope, $http, apiBaseUrl, $state){
   'use strict';
-    $http.get(apiBaseUrl + 'donees').then(function(response){
+    $http.get(apiBaseUrl + 'donees/').then(function(response){
       $scope.donees= response.data;
       console.log(response.data);
     });
     $scope.details = function(id){
-        $state.go('^app.dShow', {id: id});
+      $state.go('app.dShow', {doneeId:id});
 
     };
 })
