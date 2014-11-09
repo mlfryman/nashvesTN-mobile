@@ -10,7 +10,7 @@ html
             img.padding(src='../img/dude.jpeg')
           .col.col-50
             .info.padding
-              h1.padding {{donee.name}}
+              h4.donee-name.padding {{donee.name}}
               
               .button.button-balanced.button-block(ng-hide='android', ng-click='donate()') DONATE
               .button.button-balanced.button-block(ng-show='android', ng-click='openDonate()') DONATE
@@ -18,11 +18,22 @@ html
         .row
           ion-slide-box.slide-box(on-slide-changed='slideHasChanged($index)')
             ion-slide
-              .slide
-                h1 yo
+              .slide.padding
+                h4.donee-name.item.item-divider {{donee.alias}}'s Story
+                p.padding-top {{donee.story}}
             ion-slide
               .slide
-                h1 ho
+                .list.col
+                  .item.item-divider Aspiration
+                  .item
+                    h5 {{donee.goal}}
+                  .item.item-divider Skills
+                  .item.col-50.skills(ng-repeat='skill in donee.skills')
+                    h6 {{skill}}
             ion-slide
               .slide
-                h1 bucket
+                .list.col
+                  .item.item-divider Updates
+                  .item(ng-repeat='update in donee.updates')
+                    p {{update.text}}
+                    p.item-note {{update.timestamp | date: 'MMM y'}}

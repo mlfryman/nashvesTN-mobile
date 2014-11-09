@@ -1,6 +1,6 @@
 /* Empty. Add your own CSS if you like */
 .header {
-  background-color: darkgrey;
+  background-image: url('../img/skyline.png');
   text-align: center;
 
 }
@@ -20,7 +20,8 @@ img {
   width: 100%;
 }
 .slide {
-  height: 200px;
+  min-height: 250px;
+  height: 100%;
   width: 100%;
 }
 .graph {
@@ -28,5 +29,14 @@ img {
 }
 .help {
   height: 500px;
+  width: 100%;
+}
+.donee-name {
+  color: black;
+  font-weight: lighter;
+  text-align: center;
+}
+.skills {
+  display: inline-block;
   width: 100%;
 }

@@ -129,7 +129,6 @@ angular.module('gp-nashvesTN.controllers', [])
 
   $http.get(apiBaseUrl + 'donees/' + $stateParams.doneeId).then(function(response){
     $scope.donee = response.data;
-    console.log($scope.donee);
   });
 })
 

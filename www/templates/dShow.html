@@ -10,7 +10,7 @@
           <div class="col col-50"><img src="../img/dude.jpeg" class="padding"></div>
           <div class="col col-50">
             <div class="info padding">
-              <h1 class="padding">{{donee.name}}</h1>
+              <h4 class="donee-name padding">{{donee.name}}</h4>
               <div ng-hide="android" ng-click="donate()" class="button button-balanced button-block">DONATE</div>
               <div ng-show="android" ng-click="openDonate()" class="button button-balanced button-block">DONATE</div>
             </div>
@@ -19,18 +19,34 @@
         <div class="row">
           <ion-slide-box on-slide-changed="slideHasChanged($index)" class="slide-box">
             <ion-slide>
-              <div class="slide">
-                <h1>yo</h1>
+              <div class="slide padding">
+                <h4 class="donee-name item item-divider">{{donee.alias}}'s Story</h4>
+                <p class="padding-top">{{donee.story}}</p>
               </div>
             </ion-slide>
             <ion-slide>
               <div class="slide">
-                <h1>ho</h1>
+                <div class="list col">
+                  <div class="item item-divider">Aspiration</div>
+                  <div class="item">
+                    <h5>{{donee.goal}}</h5>
+                  </div>
+                  <div class="item item-divider">Skills</div>
+                  <div ng-repeat="skill in donee.skills" class="item col-50 skills">
+                    <h6>{{skill}}</h6>
+                  </div>
+                </div>
               </div>
             </ion-slide>
             <ion-slide>
               <div class="slide">
-                <h1>bucket</h1>
+                <div class="list col">
+                  <div class="item item-divider">Updates</div>
+                  <div ng-repeat="update in donee.updates" class="item">
+                    <p>{{update.text}}</p>
+                    <p class="item-note">{{update.timestamp | date: 'MMM y'}}</p>
+                  </div>
+                </div>
               </div>
             </ion-slide>
           </ion-slide-box>
