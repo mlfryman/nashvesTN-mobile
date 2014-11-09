@@ -1,4 +1,4 @@
-angular.module('gp-nashvesTN', ['ionic', 'gp-nashvesTN.controllers'])
+angular.module('gp-nashvesTN', ['ionic', 'gp-nashvesTN.controllers', 'LocalStorageModule'])
 
 .run(function($ionicPlatform){
   'use strict';
@@ -86,6 +86,16 @@ angular.module('gp-nashvesTN', ['ionic', 'gp-nashvesTN.controllers'])
       }
     })
 
+    .state('app.thanks', {
+      url: '/thanks',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/thanks.html',
+          controller: 'ThanksCtrl'
+        }
+      }
+    })
+
     .state('app.dShow', {
       url: '/donee/:doneeId',
       views: {
@@ -99,4 +109,31 @@ angular.module('gp-nashvesTN', ['ionic', 'gp-nashvesTN.controllers'])
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/home');
 })
-.value('apiBaseUrl', 'http://172.31.252.161:9000/api/');
+.value('apiBaseUrl', 'http://nashvestn.herokuapp.com/api/')
+.value('baseUrl', 'http://nashvestn.herokuapp.com/')
+.factory('OauthLoginService', function($window, localStorageService, baseUrl){
+  'use strict';
+
+  var loginWindow, token, hasToken, userId, hasUserId;
+
+  return{
+    login: function(provider){
+      console.log(baseUrl + 'auth/' + provider);
+      loginWindow = $window.open(baseUrl + 'auth/' + provider, '_blank', 'location=no');
+      loginWindow.addEventListener('loadstart', function(event){
+          hasToken = event.url.indexOf('?oauth_token=');
+          hasUserId = event.url.indexOf('&userId=');
+        if(hasToken > -1 && hasUserId > -1){
+          console.log(token);
+          token = event.url.match('oauth_token=(.*)&userId')[1];
+          userId = event.url.match('&userId=(.*)')[1];
+          //localStorageService.set('oauth-token', token);
+          //localStorageService.set('token-date', JSON.stringify(new Date()));
+          //localStorageService.set('userId', userId);
+          loginWindow.close();
+          location.href=location.pathname;
+        }
+      });
+    }
+  };
+});

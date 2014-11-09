@@ -9,7 +9,8 @@
         </div>
       </ion-header-bar>
       <ion-content>
-        <form id="payment-form" action="" method="POST"><span class="payment-errors li">
+        <form id="payment-form" action="http://nashvestn.herokuapp.com/api/donations" method="POST"><span class="payment-errors"></span>
+          <div class="li">
             <label class="item item-input"><span class="input-label">Amount $</span>
               <input type="text" size="1" data-stripe="amount">
             </label>
@@ -27,7 +28,9 @@
             </label>
             <label class="item">
               <button type="submit" class="button button-block button-positive">Submit Payment</button>
-            </label></span></form>
+            </label>
+          </div>
+        </form>
       </ion-content>
     </div>
   </body>
