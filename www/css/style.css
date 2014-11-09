@@ -43,7 +43,11 @@ img {
   width: 100%;
 }
 .graph {
-  height: 150px;
+  height: 80px;
+  background-image: url('../img/graph.png');
+  width: 420px;
+  background-repeat: no-repeat;
+  margin: 20px auto;
 }
 .help {
   height: 500px;

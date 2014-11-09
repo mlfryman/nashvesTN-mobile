@@ -85,9 +85,9 @@ angular.module('gp-nashvesTN.controllers', [])
 
 .controller('DashboardCtrl', function($scope, $http, apiBaseUrl){
   'use strict';
-  $http.get(apiBaseUrl + 'patrons/:id').then(function(response){
+  /*$http.get(apiBaseUrl + 'patrons/:id').then(function(response){
 
-  });
+  });*/
 })
 
 .controller('HelpCtrl', function($scope, $ionicSlideBoxDelegate){
