@@ -12,7 +12,7 @@
             <div class="info padding">
               <h1 class="padding">{{donee.name}}</h1>
               <div ng-hide="android" ng-click="donate()" class="button button-balanced button-block">DONATE</div>
-              <div ng-show="android" ng-click="openDonate()" class="button button-balanced button-block">DONATE</div>
+              <div ng-show="!android" ng-click="openDonate()" class="button button-balanced button-block">DONATE</div>
             </div>
           </div>
         </div>

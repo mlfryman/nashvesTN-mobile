@@ -149,6 +149,22 @@ angular.module('gp-nashvesTN.controllers', [])
   });
 })
 
+.controller('ThanksCtrl', function($scope, $state){
+  'use strict';
+
+  $scope.closeThanks = function(){
+    $state.go('app.dashboard');
+  };
+
+  $scope.tellFacebook = function(){
+    $state.go('app.dashboard');
+  };
+
+  $scope.tellTwitter = function(){
+    $state.go('app.dashboard');
+  };
+})
+
 .controller('DonateCtrl', function($scope, $state){
   'use strict';
 
@@ -157,21 +173,16 @@ angular.module('gp-nashvesTN.controllers', [])
 
   jQuery(function($){
     $scope.closeDonate = function(){
-      $state.go('app.dShow');
+      $state.go('app.thanks');
     };
 
     $('#payment-form').submit(function(event){
       var $form = $(this);
 
-      console.log($form);
-
       // Disable the submit button to prevent repeated clicks
       $form.find('button').prop('disabled', true);
 
       Stripe.card.createToken($form, function(status, res){
-       console.log('response', res);
-       console.log('status', status);
-
         var $form = $('#payment-form');
 
         if (res.error) {
@@ -182,14 +193,13 @@ angular.module('gp-nashvesTN.controllers', [])
           // response contains id and card, which contains additional card details
           var token = res.id;
           // Insert the token into the form so it gets submitted to the server
-          console.log('token', token);
           $form.append($('<input type="hidden" name="stripeToken" />').val(token));
           // and submit
           $form.get(0).submit();
         }
-
-        $scope.closeDonate();
       });
+
+      $scope.closeDonate();
 
       // Prevent the form from submitting with the default action
       return false;
