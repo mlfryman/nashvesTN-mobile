@@ -4,14 +4,17 @@ html
       ion-nav-buttons(side='left')
         button.button.button-icon.icon.ion-navicon(menu-toggle='left')
       ion-content.has-header
+        .row.no-padding
+          .col.header
+            .slogan
+              h3 Invest in People
+              h4.light Help the Homeless
+        .row.no-padding
+          button.button.button-stable.button-block(ng-click='scan()') SCAN QR CODE
+
         .row
-          .col.header.padding
-            h3 Invest in People
-            h4 Help the Homeless
-            button.button.button-positive(ng-click='scan()') SCAN QR CODE
-        .row
-          .col.about.padding
-            h3 About
+          .padding
+            h3.about About
             p Sharp conversation delightful excepteur tote bag in elit occaecat. 
               | Voluptate dolor sleepy consectetur. Exclusive efficient aute, tote bag 
               | consequat signature ea consectetur veniam in nulla cosy id. Proident 
