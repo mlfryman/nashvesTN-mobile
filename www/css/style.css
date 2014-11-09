@@ -2,7 +2,7 @@
 .header {
   background-image: url('../img/skyline.png');
   text-align: center;
-  background-color: #4393b9;
+  background-color: #4a87ee;
   height: 160px;
 
 }
@@ -14,6 +14,10 @@
 }
 .light {
   font-weight: lighter;
+}
+.thanks-light {
+  font-weight: lighter;
+  color: black;
 }
 .no-padding {
   padding: 0;
@@ -36,9 +40,10 @@ img {
 }
 .slide-box {
   width: 100%;
+  height: 100%;
 }
 .slide {
-  min-height: 250px;
+  min-height: 200px;
   height: 100%;
   width: 100%;
 }
@@ -50,11 +55,10 @@ img {
   margin: 20px auto;
 }
 .help {
-  height: 500px;
   width: 100%;
 }
 .donee-name {
-  color: #4393b9;
+  color: #4a87ee;
   font-weight: lighter;
   text-align: center;
 }
@@ -62,9 +66,23 @@ img {
   display: inline-block;
   width: 100%;
 }
-.about {
-  color: #4393b9;
+.blue-font {
+  color: #4a87ee;
 }
 .tutorial {
   background-color: gainsboro;
+}
+.center {
+  text-align: center;
+}
+.fake-qr {
+  display: block;
+  margin: 0 auto;
+}
+.slider-pager{
+  position: absolute;
+  bottom: 0;
+}
+.steps {
+  height: 320px;
 }

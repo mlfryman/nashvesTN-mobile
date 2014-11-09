@@ -2,13 +2,14 @@ html
   body
     .modal
       ion-header-bar
-        h1.title THANKS!
+        h1.title NashvesTN
         .buttons
           button.button.button-clear(ng-click='closeThanks()') Close
       ion-content
-        h1 Thanks for Being Awesome!
-        br
-        h3 Tell your friends they can be awesome too:
+        .row.padding
+          h1.blue-font Thanks for Being Awesome!
+        .row.padding
+          h4.thanks-light Tell your friends so they can be awesome too:
 
-        .button.button-balanced.button-block(ng-click='tellTwitter()') Twitter
-        .button.button-balanced.button-block(ng-click='tellFacebook()') Facebook
+        .button.button-positive.button-outline.button-block.ion-social-facebook(ng-click='tellTwitter()') &nbsp; Twitter
+        .button.button-positive.button-outline.button-block.ion-social-twitter(ng-click='tellFacebook()') &nbsp; Facebook

@@ -4,32 +4,70 @@ html
       ion-nav-buttons(side='left')
         button.button.button-icon.icon.ion-navicon(menu-toggle='left')
       ion-content.has-header.tutorial
+        h4.center.blue-font How do I use NashvesTN?
         ion-slide-box.slide-box(on-slide-changed='slideHasChanged($index)')
           ion-slide
             .help.padding
-              h4.padding How do I use NashvesTN?
-              .card.step1.padding
-                h5 First you search for a person to back, by either browsing our list of donees or scanning their QR code.
+              .card.steps.padding
+                h2 Step 1: Search for a person to help out.
+                h4 Do this by either browsing our list of donees,
                 //dead links
+                p Use this link from the Menu:
                 ion-item.item-icon-right
                   | Find Someone to Help
                   i.icon.ion-arrow-graph-up-right
+                
+          ion-slide
+            .help.padding
+              .card.steps.padding
                 //dead links
-                .button.button.button-assertive.button-block SCAN QR CODE
-                img(src='../img/qrcode.png', alt='qrCode')
+                h4 Or scanning the QR code code they provided you with.
+                p Use this link from the Home Page:
+                .button.button.button-balanced.button-block SCAN QR CODE
+                img.fake-qr(src='../img/qrcode.png', alt='qrCode')
           ion-slide
             .help.padding
-              h2 or Browse the list of individuals
-              //sample list item here in a card
-              h2 View the Needy Persons Profile
+              .card.steps.padding
+                h4 Step 2: Donate to the person in need.
+                p Use the Donate button on their profile.
+                //sample profile header here in card
+                .row
+                  .col.col-50
+                    img.padding(src='../img/dude.jpeg')
+                  .col.col-50
+                    .info.padding
+                      h4.donee-name.padding Frankie
+                      .button.button-balanced.button-block DONATE
           ion-slide
             .help.padding
-              h2 Donate to the person in need
-              //sample profile header here in card
-              h2 Keep up with your charitable deeds on your dashboard
-              //link to dashboard
-              h3 Thanks!!
-              
+              .card.steps.padding
+                h4 Step 4: Spread the Word.
+                p Tell your friends you helped someone out.
+                .button.button-positive.button-outline.button-block.ion-social-facebook &nbsp; Twitter
+                .button.button-positive.button-outline.button-block.ion-social-twitter &nbsp; Facebook
+          ion-slide
+            .help.padding
+              .card.steps.padding
+                h4 Step 5: Keep up with your charitable deeds on your dashboard.
+                .list.col
+                .item.item-divider Donation History
+                  a.item
+                    h3 Lou
+                      p.amount.item-note $20.00
+                  a.item
+                    h3 Gloria
+                      p.amount.item-note $20.00
+          ion-slide
+            .help.padding
+              .card.steps.padding
+                
+                
+                .header
+                h4.blue-font Thank you for choosing the NashvesTN!
+                h4 Be an Advocate.
+                ion-item.item-icon-right(nav-clear='', menu-close='', href='#/app/browse') Search Homeless Individuals
+                
+                        
 
         
           

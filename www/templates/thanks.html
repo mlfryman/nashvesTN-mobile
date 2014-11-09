@@ -3,16 +3,20 @@
   <body>
     <div class="modal">
       <ion-header-bar>
-        <h1 class="title">THANKS!</h1>
+        <h1 class="title">NashvesTN</h1>
         <div class="buttons">
           <button ng-click="closeThanks()" class="button button-clear">Close</button>
         </div>
       </ion-header-bar>
       <ion-content>
-        <h1>Thanks for Being Awesome!</h1><br>
-        <h3>Tell your friends they can be awesome too:</h3>
-        <div ng-click="tellTwitter()" class="button button-balanced button-block">Twitter</div>
-        <div ng-click="tellFacebook()" class="button button-balanced button-block">Facebook</div>
+        <div class="row padding">
+          <h1 class="blue-font">Thanks for Being Awesome!</h1>
+        </div>
+        <div class="row padding">
+          <h4 class="thanks-light">Tell your friends so they can be awesome too:</h4>
+        </div>
+        <div ng-click="tellTwitter()" class="button button-positive button-outline button-block ion-social-facebook">&nbsp; Twitter</div>
+        <div ng-click="tellFacebook()" class="button button-positive button-outline button-block ion-social-twitter">&nbsp; Facebook</div>
       </ion-content>
     </div>
   </body>
