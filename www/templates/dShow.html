@@ -11,8 +11,8 @@
           <div class="col col-50">
             <div class="info padding">
               <h1 class="padding">Frank</h1>
-              <div ng-click="donate()" class="button button-balanced button-block">DONATE</div>
-              <ion-item nav-clear="" menu-close="" href="#/app/donate/3">Donate</ion-item>
+              <div ng-hide="android" ng-click="donate()" class="button button-balanced button-block">DONATE</div>
+              <div ng-show="android" ng-click="openDonate()" class="button button-balanced button-block">DONATE</div>
             </div>
           </div>
         </div>

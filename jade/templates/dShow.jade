@@ -11,9 +11,10 @@ html
           .col.col-50
             .info.padding
               h1.padding Frank
-              .button.button-balanced.button-block(ng-click='donate()') DONATE
-              ion-item(nav-clear='', menu-close='', href='#/app/donate/3')
-                | Donate
+
+              .button.button-balanced.button-block(ng-hide='android', ng-click='donate()') DONATE
+              .button.button-balanced.button-block(ng-show='android', ng-click='openDonate()') DONATE
+
         .row
           ion-slide-box.slide-box(on-slide-changed='slideHasChanged($index)')
             ion-slide

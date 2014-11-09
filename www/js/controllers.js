@@ -82,9 +82,10 @@ angular.module('gp-nashvesTN.controllers', [])
   'use strict';
 })
 
-.controller('DoneeCtrl', function($scope, $stateParams, $ionicModal, $ionicSlideBoxDelegate){
+.controller('DoneeCtrl', function($scope, $stateParams, $ionicModal, $ionicSlideBoxDelegate, $state){
   'use strict';
 
+  $scope.android = window.device && window.device.platform.toLowerCase() === 'android';
 
   var stripeConfig = {
         key: 'pk_test_UKMfyVX6ix2ImBTaTpDqASgl',
@@ -99,21 +100,9 @@ angular.module('gp-nashvesTN.controllers', [])
       handler = StripeCheckout.configure(stripeConfig);
       //ref = window.open('', '_system', 'location=yes');
 
-  /*************************
-  $ionicModal.fromTemplateUrl('templates/donate.html', {
-      scope: $scope
-    }).then(function(modal){
-    $scope.modal = modal;
-  });
-
   $scope.openDonate = function(){
-    $scope.modal.show();
+    $state.go('app.donate');
   };
-
-  $scope.closeDonate = function(){
-    $scope.modal.hide();
-  };
-  **************************/
 
   $scope.donate = function(){
     if(window.device && window.device.platform.toLowerCase() === 'android'){
@@ -135,13 +124,17 @@ angular.module('gp-nashvesTN.controllers', [])
   };
 })
 
-.controller('DonateCtrl', function($scope){
+.controller('DonateCtrl', function($scope, $state){
   'use strict';
 
   // used only for custom stripe forms //
   Stripe.setPublishableKey('pk_test_UKMfyVX6ix2ImBTaTpDqASgl');
 
   jQuery(function($){
+    $scope.closeDonate = function(){
+      $state.go('app.dShow');
+    };
+
     $('#payment-form').submit(function(event){
       var $form = $(this);
 
