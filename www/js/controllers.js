@@ -2,7 +2,7 @@
 
 angular.module('gp-nashvesTN.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout){
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, OauthLoginService){
   'use strict';
 
   // Form data for the login modal
@@ -49,6 +49,21 @@ angular.module('gp-nashvesTN.controllers', [])
     $timeout(function(){
       $scope.closeLogin();
     }, 1000);
+  };
+
+  $scope.authGoogle = function(){
+    console.log('google');
+    OauthLoginService.login('google');
+  };
+
+  $scope.authFacebook = function(){
+    console.log('facebook');
+    OauthLoginService.login('facebook');
+  };
+
+  $scope.authTwitter = function(){
+    console.log('twitter');
+    OauthLoginService.login('twitter');
   };
 })
 
@@ -119,6 +134,7 @@ angular.module('gp-nashvesTN.controllers', [])
   };
 
   function stripeCb(token){
+
     // Use the token to create the charge with a server-side script.
     // You can access the token ID with `token.id`
   }
@@ -151,10 +167,27 @@ angular.module('gp-nashvesTN.controllers', [])
       // Disable the submit button to prevent repeated clicks
       $form.find('button').prop('disabled', true);
 
-      Stripe.card.createToken($form, function(res, token){
-         console.log(res);
-         console.log(token);
-         $scope.closeDonate();
+      Stripe.card.createToken($form, function(status, res){
+       console.log('response', res);
+       console.log('status', status);
+
+        var $form = $('#payment-form');
+
+        if (res.error) {
+          // Show the errors on the form
+          $form.find('.payment-errors').text(res.error.message);
+          $form.find('button').prop('disabled', false);
+        } else {
+          // response contains id and card, which contains additional card details
+          var token = res.id;
+          // Insert the token into the form so it gets submitted to the server
+          console.log('token', token);
+          $form.append($('<input type="hidden" name="stripeToken" />').val(token));
+          // and submit
+          $form.get(0).submit();
+        }
+
+        $scope.closeDonate();
       });
 
       // Prevent the form from submitting with the default action

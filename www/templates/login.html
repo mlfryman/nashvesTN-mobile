@@ -9,19 +9,11 @@
         </div>
       </ion-header-bar>
       <ion-content>
-        <form ng-submit="doLogin()">
-          <div class="list">
-            <label class="item item-input"><span class="input-label">Username</span>
-              <input type="text" ng-model="loginData.username">
-            </label>
-            <label class="item item-input"><span class="input-label">Password</span>
-              <input type="password" ng-model="loginData.password">
-            </label>
-            <label class="item">
-              <button type="submit" class="button button-block button-positive">Log in</button>
-            </label>
-          </div>
-        </form>
+        <div class="list">
+          <div ng-click="authGoogle()" class="button button-balanced button-block">GOOGLE</div>
+          <div ng-click="authFacebook()" class="button button-balanced button-block">FACEBOOK</div>
+          <div ng-click="authTwitter()" class="button button-balanced button-block">TWITTER</div>
+        </div>
       </ion-content>
     </div>
   </body>
