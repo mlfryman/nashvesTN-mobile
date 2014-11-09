@@ -11,6 +11,9 @@
     <feature name="Device">
         <param name="android-package" value="org.apache.cordova.device.Device" />
     </feature>
+    <feature name="InAppBrowser">
+        <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+    </feature>
     <name>gp-nashvesTN</name>
     <description>
         A qr reader app allowing the user to donate money to another person.
