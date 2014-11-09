@@ -26,3 +26,7 @@ img {
 .graph {
   height: 150px;
 }
+.help {
+  height: 500px;
+  width: 100%;
+}

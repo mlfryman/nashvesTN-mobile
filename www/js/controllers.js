@@ -70,8 +70,11 @@ angular.module('gp-nashvesTN.controllers', [])
   'use strict';
 })
 
-.controller('HelpCtrl', function($scope){
+.controller('HelpCtrl', function($scope, $ionicSlideBoxDelegate){
   'use strict';
+  $scope.nextSlide = function(){
+    $ionicSlideBoxDelegate.next();
+  };
 })
 
 .controller('ProfileCtrl', function($scope){
