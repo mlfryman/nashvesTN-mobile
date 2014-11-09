@@ -4,7 +4,7 @@
   text-align: center;
   background-color: #4393b9;
   height: 160px;
-  
+
 }
 .slogan > h2, h3 {
   color: #f8f8f8;
@@ -64,4 +64,7 @@ img {
 }
 .about {
   color: #4393b9;
+}
+.tutorial {
+  background-color: gainsboro;
 }

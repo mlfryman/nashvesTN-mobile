@@ -3,14 +3,20 @@ html
     ion-view(title='NashvesTN')
       ion-nav-buttons(side='left')
         button.button.button-icon.icon.ion-navicon(menu-toggle='left')
-      ion-content.has-header
+      ion-content.has-header.tutorial
         ion-slide-box.slide-box(on-slide-changed='slideHasChanged($index)')
           ion-slide
             .help.padding
-                h1 How to use this app
-                .step1
-                  h2 Scan the barcode
-                  img(src='', alt='qrCode')
+              h4.padding How do I use NashvesTN?
+              .card.step1.padding
+                h5 First you search for a person to back, by either browsing our list of donees or scanning their QR code.
+                //dead links
+                ion-item.item-icon-right
+                  | Find Someone to Help
+                  i.icon.ion-arrow-graph-up-right
+                //dead links
+                .button.button.button-assertive.button-block SCAN QR CODE
+                img(src='../img/qrcode.png', alt='qrCode')
           ion-slide
             .help.padding
               h2 or Browse the list of individuals

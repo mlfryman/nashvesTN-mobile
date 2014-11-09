@@ -5,13 +5,17 @@
       <ion-nav-buttons side="left">
         <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
       </ion-nav-buttons>
-      <ion-content class="has-header">
+      <ion-content class="has-header tutorial">
         <ion-slide-box on-slide-changed="slideHasChanged($index)" class="slide-box">
           <ion-slide>
             <div class="help padding">
-              <h1>How to use this app</h1>
-              <div class="step1">
-                <h2>Scan the barcode</h2><img src="" alt="qrCode">
+              <h4 class="padding">How do I use NashvesTN?</h4>
+              <div class="card step1 padding">
+                <h5>First you search for a person to back, by either browsing our list of donees or scanning their QR code.</h5>
+                <!--dead links-->
+                <ion-item class="item-icon-right">Find Someone to Help<i class="icon ion-arrow-graph-up-right"></i></ion-item>
+                <!--dead links-->
+                <div class="button button button-assertive button-block">SCAN QR CODE</div><img src="../img/qrcode.png" alt="qrCode">
               </div>
             </div>
           </ion-slide>
