@@ -10,8 +10,8 @@ html
             img.padding(src='../img/dude.jpeg')
           .col.col-50
             .info.padding
-              h1.padding Frank
-
+              h1.padding {{donee.name}}
+              
               .button.button-balanced.button-block(ng-hide='android', ng-click='donate()') DONATE
               .button.button-balanced.button-block(ng-show='android', ng-click='openDonate()') DONATE
 
