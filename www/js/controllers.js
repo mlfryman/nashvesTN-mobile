@@ -1,3 +1,5 @@
+/* global StripeCheckout, Stripe */
+
 angular.module('gp-nashvesTN.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout){
@@ -14,7 +16,6 @@ angular.module('gp-nashvesTN.controllers', [])
   });
 
   $scope.scan = function(){
-    console.log('scan!');
     cordova.plugins.barcodeScanner.scan(
       function(result){
         alert('We got a barcode\n' +
@@ -91,9 +92,88 @@ angular.module('gp-nashvesTN.controllers', [])
   $scope.nextSlide = function(){
     $ionicSlideBoxDelegate.next();
   };
+})
+
+.controller('DoneeCtrl', function($scope, $stateParams, $ionicModal, $ionicSlideBoxDelegate, $http, apiBaseUrl){
+  'use strict';
+
+  var stripeConfig = {
+        key: 'pk_test_UKMfyVX6ix2ImBTaTpDqASgl',
+        image: '../img/ionic.png',
+        token: stripeCb
+      },
+      stripeOptions = {
+        name: 'Demo Site',
+        description: '2 widgets ($20.00)',
+        amount: 2000
+      },
+      handler = StripeCheckout.configure(stripeConfig);
+      //ref = window.open('', '_system', 'location=yes');
+
+  /*************************
+  $ionicModal.fromTemplateUrl('templates/donate.html', {
+      scope: $scope
+    }).then(function(modal){
+    $scope.modal = modal;
+  });
+
+  $scope.openDonate = function(){
+    $scope.modal.show();
+  };
+
+  $scope.closeDonate = function(){
+    $scope.modal.hide();
+  };
+  **************************/
+
+  $scope.donate = function(){
+    if(window.device && window.device.platform.toLowerCase() === 'android'){
+      // failed attempt to run stripe in system window //
+      var ref = window.open('https://checkout.stripe.com/v3', '_system', 'location=yes');
+      ref.executeScript({code: handler.open(stripeOptions)});
+    }else{
+      handler.open(stripeOptions);
+    }
+  };
+
+  function stripeCb(token){
+    // Use the token to create the charge with a server-side script.
+    // You can access the token ID with `token.id`
+  }
+
+  $scope.nextSlide = function(){
+    $ionicSlideBoxDelegate.next();
+  };
 
   $http.get(apiBaseUrl + 'donees/' + $stateParams.doneeId).then(function(response){
     $scope.donee = response.data;
     console.log($scope.donee);
+  });
+})
+
+.controller('DonateCtrl', function($scope){
+  'use strict';
+
+  // used only for custom stripe forms //
+  Stripe.setPublishableKey('pk_test_UKMfyVX6ix2ImBTaTpDqASgl');
+
+  jQuery(function($){
+    $('#payment-form').submit(function(event){
+      var $form = $(this);
+
+      console.log($form);
+
+      // Disable the submit button to prevent repeated clicks
+      $form.find('button').prop('disabled', true);
+
+      Stripe.card.createToken($form, function(res, token){
+         console.log(res);
+         console.log(token);
+         $scope.closeDonate();
+      });
+
+      // Prevent the form from submitting with the default action
+      return false;
+    });
   });
 });
