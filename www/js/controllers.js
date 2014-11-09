@@ -85,15 +85,15 @@ angular.module('gp-nashvesTN.controllers', [])
   'use strict';
 })
 
-.controller('DoneeCtrl', function($scope, $ionicSlideBoxDelegate, $http, apiBaseUrl, $state){
+.controller('DoneeCtrl', function($scope, $ionicSlideBoxDelegate, $http, apiBaseUrl, $stateParams){
   'use strict';
+
   $scope.nextSlide = function(){
     $ionicSlideBoxDelegate.next();
   };
 
-
-  // $http.get(apiBaseUrl + 'donees/' + id).then(function(response){
-  //   $scope.donee= response.data;
-  //   console.log(response.data);
-  // });
+  $http.get(apiBaseUrl + 'donees/' + $stateParams.doneeId).then(function(response){
+    $scope.donee = response.data;
+    console.log($scope.donee);
+  });
 });
