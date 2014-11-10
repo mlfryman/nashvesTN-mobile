@@ -18,7 +18,7 @@ NashvesTN is a tool to connect people.  This app makes it easier for a user to c
 ### Features
 - [x] MEAN Stack: MongoDB (with Mongoose), Express, Angular, & Node
 - [x] Web Admin Dashboard (for administrators)
-- [x] Mobile Companion App: Ionic & Cordova (for patrons)
+- [x] Mobile Companion App: Ionic & Cordova (for advocates)
 - [x] QR code reader
 - [x] Payment processing via Stripe
 - [x] Social login
